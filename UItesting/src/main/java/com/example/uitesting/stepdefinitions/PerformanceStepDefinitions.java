@@ -6,7 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
 
-public class SearchButtonSteps {
+public class PerformanceStepDefinitions {
     private PerformancePage performancePage;
 
     @Given("I navigate to the performance review search page")
@@ -17,6 +17,11 @@ public class SearchButtonSteps {
 
     @Then("I verify the Search button is available")
     public void verifySearchButtonIsAvailable() {
-        Assert.assertTrue(performancePage.isSearchButtonPresent(), "Search button is not available on the page.");
+        Assert.assertTrue(performancePage.isSearchButtonDisplayed(), "Search button is not available on the page.");
+    }
+
+    @Then("I verify the Reset button is available")
+    public void verifyResetButtonIsAvailable() {
+        Assert.assertTrue(performancePage.isResetButtonDisplayed(), "Reset button is not available on the page.");
     }
 }
