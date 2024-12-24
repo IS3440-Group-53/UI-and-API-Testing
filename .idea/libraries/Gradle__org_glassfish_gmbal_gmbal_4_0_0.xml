@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.gmbal:gmbal:4.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.gmbal/gmbal/4.0.0/38e088859faea7433643e1db9d8b5829668b515c/gmbal-4.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.gmbal/gmbal/4.0.0/f8a94110ae6c13965c52af119b0c8f3d040ddcfd/gmbal-4.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

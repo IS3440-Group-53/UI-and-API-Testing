@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tapestry:tapestry-runner:5.9.0-preview-2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/tapestry-runner/5.9.0-preview-2/85c39d8895c218996ee28ae3373b994a54475499/tapestry-runner-5.9.0-preview-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/tapestry-runner/5.9.0-preview-2/9d64a04788ba1378b15d5e3fa6d3e111e66f5094/tapestry-runner-5.9.0-preview-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

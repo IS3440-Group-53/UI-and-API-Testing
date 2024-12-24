@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.pfl:pfl-dynamic:4.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.pfl/pfl-dynamic/4.0.1/c5be0e4414e3844b2528e18d8e537a8b9ab2a361/pfl-dynamic-4.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.pfl/pfl-dynamic/4.0.1/800192b10ec86e88e47dc9f24c6d249b55e1b9dc/pfl-dynamic-4.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

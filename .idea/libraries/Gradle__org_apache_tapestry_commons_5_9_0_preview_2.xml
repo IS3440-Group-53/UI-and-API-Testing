@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tapestry:commons:5.9.0-preview-2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/commons/5.9.0-preview-2/5f4e247e070c675228ad6d4362f9604f231dcabc/commons-5.9.0-preview-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/commons/5.9.0-preview-2/815eaba2ac0aad83ec99ecb1a127886736c24b73/commons-5.9.0-preview-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

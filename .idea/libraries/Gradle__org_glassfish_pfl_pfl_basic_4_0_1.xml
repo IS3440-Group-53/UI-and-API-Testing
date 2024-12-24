@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.pfl:pfl-basic:4.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.pfl/pfl-basic/4.0.1/1e04260fd4afde6dea9b10fd118cb6df91851c2c/pfl-basic-4.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.pfl/pfl-basic/4.0.1/f33358667e55b2888cac495d2095579a59a74e88/pfl-basic-4.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tomcat:tomcat-el-api:7.0.70">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-el-api/7.0.70/be43a3e11259b4ab4471ddddca14e05ba360cd91/tomcat-el-api-7.0.70.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-el-api/7.0.70/3c3c51b9ac2e7a4a0ca11816f37d4b4ca1c940f4/tomcat-el-api-7.0.70-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

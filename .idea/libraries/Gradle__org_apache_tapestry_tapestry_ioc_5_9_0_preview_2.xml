@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tapestry:tapestry-ioc:5.9.0-preview-2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/tapestry-ioc/5.9.0-preview-2/a518bb5f03d5b24a7c938354312c71842122d951/tapestry-ioc-5.9.0-preview-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/tapestry-ioc/5.9.0-preview-2/c5ed51ab970dfc6a4c99be1e2af90f1d6e335158/tapestry-ioc-5.9.0-preview-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

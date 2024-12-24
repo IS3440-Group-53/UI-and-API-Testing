@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/UI-and-API-Testing.iml" filepath="$PROJECT_DIR$/.idea/UI-and-API-Testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment1.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment1.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment1.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment1.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment1.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment1.testIntegrationTapestry.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment1.testIntegrationTapestry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment1.testUnitTapestry.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment1.testUnitTapestry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webpage-testing.iml" filepath="$PROJECT_DIR$/webpage-testing.iml" />
     </modules>
   </component>
 </project>

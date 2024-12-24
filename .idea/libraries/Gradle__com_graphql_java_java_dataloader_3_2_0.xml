@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.graphql-java:java-dataloader:3.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/java-dataloader/3.2.0/f45c53595cab4c23e35526cc122e2bd159a50516/java-dataloader-3.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.graphql-java/java-dataloader/3.2.0/145d17ab0f15be016f6ec1e12f1309aca504be36/java-dataloader-3.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

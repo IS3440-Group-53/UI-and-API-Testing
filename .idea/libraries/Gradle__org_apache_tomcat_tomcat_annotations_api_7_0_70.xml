@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tomcat:tomcat-annotations-api:7.0.70">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-annotations-api/7.0.70/6b4c2af248d1c45865f1398a91f881480faa65bf/tomcat-annotations-api-7.0.70.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-annotations-api/7.0.70/b5a5498d7dac7487873dff6ce0eae6ed5313530f/tomcat-annotations-api-7.0.70-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.tapestry:tapestry-func:5.9.0-preview-2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/tapestry-func/5.9.0-preview-2/8a8914bfbddb79dc7ba2d8d33924fb2f0087b18c/tapestry-func-5.9.0-preview-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tapestry/tapestry-func/5.9.0-preview-2/fba38e5b06c65cef7ccbe1cb778d15945435ceaf/tapestry-func-5.9.0-preview-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

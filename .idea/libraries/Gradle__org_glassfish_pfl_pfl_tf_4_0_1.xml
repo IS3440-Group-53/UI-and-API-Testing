@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish.pfl:pfl-tf:4.0.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.pfl/pfl-tf/4.0.1/ae991af56aa977414630dcb30d3bca9aae2afb2f/pfl-tf-4.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.pfl/pfl-tf/4.0.1/637507a58ae30b721c6e7ea85bd39e2f89743683/pfl-tf-4.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -15,7 +15,7 @@ public class ChromeDriverTest {
     @BeforeClass
     public void setUp() {
         // Set the path to the ChromeDriver
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\DINESHI\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\Downloads\\chromedriver-win64\\chromedriver.exe");
 
         // Initialize the ChromeDriver
         driver = new ChromeDriver();
