@@ -1,4 +1,4 @@
-package StepDefinition;
+package stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -52,6 +52,6 @@ public class LoginSteps {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(driver.getTitle(),"OrangeHRM","Login page title mismatch!");
         softAssert.assertAll();
-        driver.close();
+        //driver.close();
     }
 }
