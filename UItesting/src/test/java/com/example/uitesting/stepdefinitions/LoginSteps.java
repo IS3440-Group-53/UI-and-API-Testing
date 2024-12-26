@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebElement;
@@ -14,6 +15,7 @@ import org.testng.asserts.SoftAssert;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
+import java.util.List;
 
 public class LoginSteps {
 
@@ -99,4 +101,34 @@ public class LoginSteps {
             driver.close();
         }
     }
+    @Then("Verify Employee Distribution by Subunit widget is interactive")
+    public void verify_employee_distribution_widget() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+            // Verify that the widget is visible
+            WebElement widget = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[text()='Employee Distribution by Subunit']")));
+            SoftAssert softAssert = new SoftAssert();
+            softAssert.assertTrue(widget.isDisplayed(), "Employee Distribution by Subunit widget is not displayed!");
+
+            // Verify that the chart inside the widget is visible
+            WebElement chart = driver.findElement(By.xpath("//canvas[contains(@class, 'chart-canvas')]"));
+            softAssert.assertTrue(chart.isDisplayed(), "Chart inside the Employee Distribution widget is not displayed!");
+
+            // Verify interactivity: Check if tooltip appears when hovering over the chart
+            Actions actions = new Actions(driver);
+            actions.moveToElement(chart, 50, 50).perform(); // Move to a point on the chart
+
+            WebElement tooltip = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class, 'tooltip')]")));
+            softAssert.assertTrue(tooltip.isDisplayed(), "Tooltip is not displayed on hovering over the chart!");
+
+            softAssert.assertAll();
+        } catch (Exception e) {
+            System.out.println("Error while verifying Employee Distribution by Subunit widget: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            driver.close();
+        }
+    }
+
 }

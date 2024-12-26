@@ -9,3 +9,7 @@ Feature: To verify valid username and valid password
     Given Open the application
     When Enter the valid username and password
     Then Verify key elements on the dashboard
+  Scenario: Verify Employee Distribution by Subunit widget functionality
+    Given Open the application
+    When Enter the valid username and password
+    Then Verify Employee Distribution by Subunit widget is interactive
