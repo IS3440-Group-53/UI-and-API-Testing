@@ -1,4 +1,4 @@
-package com.example.uitesting;
+package UItesting.src.main.test.java.com.example.uitesting;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

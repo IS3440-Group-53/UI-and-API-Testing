@@ -1,4 +1,4 @@
-package UItesting.src.main.test.java.com.example.uitesting.runners;
+package com.example.uitesting.runner;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;

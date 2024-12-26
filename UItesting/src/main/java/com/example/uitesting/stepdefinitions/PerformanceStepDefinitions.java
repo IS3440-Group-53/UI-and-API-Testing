@@ -1,4 +1,4 @@
-package UItesting.src.main.test.java.com.example.uitesting.stepdefinitions;
+package com.example.uitesting.stepdefinitions;
 
 import com.example.uitesting.pages.PerformancePage;
 import com.example.uitesting.utilities.DriverManager;

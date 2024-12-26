@@ -1,4 +1,4 @@
-package UItesting.src.main.test.java.com.example.uitesting.tests;
+package com.example.uitesting.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

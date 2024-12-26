@@ -1,4 +1,4 @@
-package UItesting.src.main.test.java.com.example.uitesting.utilities;
+package com.example.uitesting.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,7 +10,7 @@ public class DriverManager {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\hp\\Downloads\\chromedriver-win64\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
             driver = new ChromeDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
