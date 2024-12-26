@@ -13,3 +13,7 @@ Feature: To verify valid username and valid password
     Given Open the application
     When Enter the valid username and password
     Then Verify Employee Distribution by Subunit widget is interactive
+  Scenario: Verify Quick Launch buttons functionality
+    Given Open the application
+    When Enter the valid username and password
+    Then Verify Quick Launch buttons are functional

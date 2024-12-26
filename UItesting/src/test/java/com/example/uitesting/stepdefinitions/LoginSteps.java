@@ -130,5 +130,39 @@ public class LoginSteps {
             driver.close();
         }
     }
+    @Then("Verify Quick Launch buttons are functional")
+    public void verify_quick_launch_buttons() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
+            // Locate the Quick Launch widget
+            WebElement quickLaunchWidget = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[text()='Quick Launch']")));
+            SoftAssert softAssert = new SoftAssert();
+            softAssert.assertTrue(quickLaunchWidget.isDisplayed(), "Quick Launch widget is not displayed!");
+
+            // Verify the presence of all buttons in Quick Launch
+            List<WebElement> quickLaunchButtons = driver.findElements(By.xpath("//div[@class='quick-launch']//button"));
+            softAssert.assertTrue(quickLaunchButtons.size() > 0, "No buttons found in Quick Launch!");
+
+            // Iterate through each button and verify functionality
+            for (WebElement button : quickLaunchButtons) {
+                String buttonLabel = button.getText();
+                softAssert.assertTrue(button.isDisplayed(), "Button '" + buttonLabel + "' is not displayed!");
+                softAssert.assertTrue(button.isEnabled(), "Button '" + buttonLabel + "' is not clickable!");
+
+                // Click the button and verify navigation or modal
+                button.click();
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text(), '" + buttonLabel + "')]"))); // Adjust based on actual behavior
+                System.out.println("Button '" + buttonLabel + "' is functional.");
+                driver.navigate().back(); // Navigate back to the dashboard after validation
+            }
+
+            softAssert.assertAll();
+        } catch (Exception e) {
+            System.out.println("Error while verifying Quick Launch buttons: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            driver.close();
+        }
+    }
 }
