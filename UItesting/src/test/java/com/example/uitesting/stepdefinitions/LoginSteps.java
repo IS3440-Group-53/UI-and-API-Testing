@@ -8,9 +8,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.asserts.SoftAssert;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -18,11 +19,28 @@ public class LoginSteps {
 
     WebDriver driver;
 
+//    @Given("Open the application")
+//    public void open_the_application() {
+//
+//        driver = new ChromeDriver();
+////        driver = new EdgeDriver();
+//        driver.get("https://opensource-demo.orangehrmlive.com");
+//        driver.manage().window().maximize();
+//    }
+
     @Given("Open the application")
     public void open_the_application() {
+        // Set the path to the ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "D:\\Acadamic Notes\\Lvl 4 Sem 1\\IS 3440 ITQA\\chromedriver-win64\\chromedriver.exe");
 
-        //driver = new ChromeDriver();
-        driver = new EdgeDriver();
+        // Set Brave browser options
+        ChromeOptions options = new ChromeOptions();
+        options.setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe"); // Update with your Brave path
+
+        // Initialize ChromeDriver with Brave binary
+        driver = new ChromeDriver(options);
+
+        // Open the application
         driver.get("https://opensource-demo.orangehrmlive.com");
         driver.manage().window().maximize();
     }
@@ -55,4 +73,30 @@ public class LoginSteps {
         //driver.close();
     }
 
+    @Then("Verify key elements on the dashboard")
+    public void verify_dashboard_elements() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+
+            // Verify Dashboard title
+            WebElement dashboardHeader = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h6[text()='Dashboard']")));
+            SoftAssert softAssert = new SoftAssert();
+            softAssert.assertTrue(dashboardHeader.isDisplayed(), "Dashboard header is not displayed!");
+
+            // Verify the presence of the first widget (e.g., Quick Launch)
+            WebElement quickLaunchWidget = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("widgetId"))); // Replace with actual ID
+            softAssert.assertTrue(quickLaunchWidget.isDisplayed(), "Quick Launch widget is not displayed!");
+
+            // Verify the presence of a menu item (e.g., "Leave")
+            WebElement leaveMenuItem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[text()='Leave']")));
+            softAssert.assertTrue(leaveMenuItem.isDisplayed(), "Leave menu item is not displayed!");
+
+            softAssert.assertAll();
+        } catch (Exception e) {
+            System.out.println("Error while verifying dashboard elements: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            driver.close();
+        }
+    }
 }
