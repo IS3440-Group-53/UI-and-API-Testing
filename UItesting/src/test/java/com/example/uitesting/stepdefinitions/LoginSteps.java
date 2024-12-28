@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,24 +9,27 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class LoginSteps {
+public class LoginSteps  {
+    protected static WebDriver driver;
+    WebDriverWait wait;
+    String url ="https://opensource-demo.orangehrmlive.com";
 
-    WebDriver driver;
 
     @Given("Open the application")
     public void open_the_application() {
-
-        //driver = new ChromeDriver();
-        driver = new EdgeDriver();
-        driver.get("https://opensource-demo.orangehrmlive.com");
+//      System.setProperty("webdriver.chrome.driver", "C:/Program Files/Google/Chrome/Application/chromedriver.exe"); // Update the path if necessary
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get(url);
+
     }
+
     @When("Enter the valid username and password")
     public void enter_the_valid_username_and_password() {
         try{
@@ -52,7 +56,12 @@ public class LoginSteps {
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(driver.getTitle(),"OrangeHRM","Login page title mismatch!");
         softAssert.assertAll();
-        //driver.close();
+
+    }
+    @Then("Close the driver")
+    public void close(){
+      //  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.close();
     }
 
 }
