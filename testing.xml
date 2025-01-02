@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CucumberTestSuite">
+    <test name="CucumberTests">
+        <classes>
+
+            <class name="runner.TestNGCucumberRunner"/>
+        </classes>
+    </test>
+    <test name="Test2">
+        <classes>
+            <!-- Specify your second TestNG class here -->
+            <class name="runner.DashboardTestRunner" />
+        </classes>
+    </test>
+    <test name="Test3">
+        <classes>
+            <!-- Specify your second TestNG class here -->
+            <class name="runner.MyInfoTestRunner" />
+        </classes>
+    </test>
+</suite>
