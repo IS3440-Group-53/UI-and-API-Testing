@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="CucumberTestNG" />
+        <module name="UI-and-API-Testing" />
       </profile>
     </annotationProcessing>
   </component>
