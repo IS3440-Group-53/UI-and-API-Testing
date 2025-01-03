@@ -6,8 +6,11 @@ import Utilities.DriverManager;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import java.util.List;
 import java.util.Map;
 
@@ -30,19 +33,9 @@ public class TimeStepDefinition {
         timePage.clickTimesheetsDropdown();
     }
 
-    @When("I click on Timesheets tab")
-    public void clickTimesheetsTab() {
-        timePage.clickTimesheets();
-    }
-
     @When("I select My Timesheet option")
     public void selectMyTimesheetOption() {
         timePage.selectMyTimesheetOption();
-    }
-
-    @When("I select My Timesheets")
-    public void selectMyTimesheets() {
-        timePage.clickMyTimesheet();
     }
 
     @When("I click the previous button {string} times")
@@ -60,26 +53,18 @@ public class TimeStepDefinition {
         timePage.clickSubmit();
     }
 
-    @Then("The new timesheet should be created")
-    public void verifyTimesheetCreated() {
-        // Add verification logic here if needed
-    }
-
     @When("I edit the timesheet")
     public void editTimesheet() {
-        timePage.clickEditButton();
-        timePage.enterTypeFieldData();
-        timePage.clickSaveButton();
-    }
-
-    @Then("The timesheet should be saved successfully")
-    public void verifyTimesheetSaved() {
-        // Add verification logic here
+        timePage.editTimesheet();
     }
 
     @When("I proceed to Project Info")
     public void proceedToProjectInfo() {
         timePage.clickProjectInfo();
+    }
+
+    @When("I select Customers option")
+    public void selectCustomersOption() {
         timePage.selectCustomers();
     }
 
@@ -87,29 +72,48 @@ public class TimeStepDefinition {
     public void createNewCustomerWithDetails(DataTable dataTable) {
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
         Map<String, String> customerData = data.get(0);
-
-        timePage.clickAddCustomer();
-        timePage.enterCustomerDetails(
-                customerData.get("name"),
-                customerData.get("description")
-        );
-        timePage.saveCustomer();
+        timePage.createCustomer(customerData.get("name"), customerData.get("description"));
     }
 
-    @Then("The customer should be created successfully")
-    public void verifyCustomerCreated() {
-        // Add verification logic here
+    @When("I click the edit button for first customer")
+    public void clickEditButtonForFirstCustomer() {
+        timePage.editFirstCustomer();
     }
 
     @When("I attempt to create customer without name")
-    public void attemptCustomerCreateWithoutName() {
-        timePage.clickAddCustomer();
-        timePage.enterCustomerDetails("", "Test Description");
-        timePage.saveCustomer();
+    public void attemptCreateCustomerWithoutName() {
+        timePage.createCustomer("", "Test Description");
     }
 
-    @Then("I should see the required field validation message")
-    public void verifyValidationMessage() {
-        // Add verification logic here
+    @When("I clear the description field")
+    public void clearDescriptionField() {
+        // This is handled in editFirstCustomer method
+    }
+
+    @When("I save the customer changes")
+    public void saveCustomerChanges() {
+        // This is handled in editFirstCustomer method
+    }
+
+    @After
+    public void cleanup(Scenario scenario) {
+        try {
+            // Add delay of 3 seconds before closing the browser
+            System.out.println("Waiting for 3 seconds before closing browser...");
+            Thread.sleep(3000); // 3 second delay
+
+        } catch (Exception e) {
+            System.out.println("Failed to take screenshot or wait: " + e.getMessage());
+        } finally {
+            // Close the browser
+            if (driver != null) {
+                try {
+                    System.out.println("Closing browser for scenario: " + scenario.getName());
+                    driver.quit();
+                } catch (Exception e) {
+                    System.out.println("Failed to close browser: " + e.getMessage());
+                }
+            }
+        }
     }
 }
