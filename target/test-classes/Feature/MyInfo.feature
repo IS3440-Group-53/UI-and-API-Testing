@@ -8,15 +8,32 @@ Feature: Navigate from Dashboard to My Info Page
 
   @Scenario01
   Scenario: Navigate to My Info Page
- When I am on the Dashboard page
+    When I am on the Dashboard page
     And I click on the "My Info" menu
-Then I should be navigated to the My Info page
+    Then I should be navigated to the My Info page
+
+  @Scenario02
+  Scenario: Update User Full Name
+    When clear and enter the full name field
+    Then clicks the "Save" button
+
+  @Scenario03
+  Scenario: Update Gender
+    When the user selects "Female" in the gender radio button
+    Then the gender selection should be saved
 
 
-#  @Scenario02
-#  Scenario: User updates personal details
-##    Given the user is logged in to OrangeHRM
-##    And the user is on the My Info page
-#    When the user updates the personal details with valid data
-#    And clicks the Save button
-#    Then the updated details should be displayed correctly
+  @Scenario04
+  Scenario: Add an image to attachments and write a comment
+
+    When the user clicks the "Add Attachment" button
+    And the user selects an image file "profile.jpg" from their computer
+    And the user enters "Profile picture added" in the comment field
+    Then the user clicks the Save button
+
+  @Scenario05
+  Scenario: Delete attachment with confirmation
+
+    When the user clicks delete icon for the attachment
+    And confirms deletion in the popup
+    Then delete the Attachment
