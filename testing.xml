@@ -6,8 +6,15 @@
 
             <class name="runner.TestNGCucumberRunner"/>
         </classes>
+
     </test>
     <test name="Test2">
+        <classes>
+            <!-- Specify your second TestNG class here -->
+            <class name="runner.DashboardTestRunner" />
+        </classes>
+    </test>
+    <test name="Test3">
         <classes>
             <!-- Specify your second TestNG class here -->
             <class name="runner.MyInfoTestRunner" />
