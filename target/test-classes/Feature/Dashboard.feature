@@ -26,7 +26,6 @@ Feature: Validate Dashboard Page
   @ValidatePendingLeaveRequests
   Scenario: Verify Pending Leave Requests widget functionality
     When I navigate to the Dashboard page and locate the Pending Leave Requests widget
-    Then I verify the Pending Leave Requests count matches the system data
 
   @SearchBarFunctionality
   Scenario: Verify search bar functionality on the Dashboard

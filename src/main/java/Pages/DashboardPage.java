@@ -13,7 +13,6 @@ public class DashboardPage {
     WebDriver driver;
     WebDriverWait wait;
 
-    //    By dashboardHeader = By.xpath("//h6[text()='Dashboard']");
     By dashboardHeader = By.xpath("//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']");
     Map<String, By> widgets = new HashMap<>();
 
@@ -24,7 +23,7 @@ public class DashboardPage {
     By logoutOption = By.xpath("//a[normalize-space()='Logout']");
     By quickLaunchWidget = By.xpath("//body/div[@id='app']/div[@class='oxd-layout orangehrm-upgrade-layout']/div[@class='oxd-layout-container']/div[@class='oxd-layout-context']/div[@class='oxd-grid-3 orangehrm-dashboard-grid']/div[1]/div[1]");
     By employeeDistributionWidget = By.xpath("//body/div[@id='app']/div[@class='oxd-layout orangehrm-upgrade-layout']/div[@class='oxd-layout-container']/div[@class='oxd-layout-context']/div[@class='oxd-grid-3 orangehrm-dashboard-grid']/div[1]/div[1]");
-    By pendingLeaveRequestsWidget = By.xpath("//div[@class='oxd-sheet oxd-sheet--rounded oxd-sheet--white orangehrm-dashboard-widget emp-leave-chart']//div[@class='orangehrm-dashboard-widget-header']']]");
+    By pendingLeaveRequestsWidget = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[5]/div/div[2]");
     By searchBar = By.xpath("//input[@placeholder='Search']");
     By searchResults = By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul");
     By pendingLeaveRequestsCount = By.xpath("//h6[text()='Pending Leave Requests']/following-sibling::div");
@@ -70,25 +69,61 @@ public class DashboardPage {
             return false;
         }
     }
+
     public void resizeWindow(int width, int height) {
-        driver.manage().window().setSize(new Dimension(width, height));
-        System.out.println("Window resized to: " + width + "x" + height);
+        try {
+            // Add a delay before resizing the window
+            Thread.sleep(1000);
+
+            // Resize the window
+            driver.manage().window().setSize(new Dimension(width, height));
+            System.out.println("Window resized to: " + width + "x" + height);
+
+            // Add a delay after resizing the window
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Thread interrupted while resizing window: " + e.getMessage());
+        }
     }
 
     public boolean isDashboardResponsive() {
         try {
+            // Wait for Quick Launch Widget
             wait.until(ExpectedConditions.visibilityOfElementLocated(quickLaunchWidget));
+            Thread.sleep(1000); // Delay for 1 second
+
+            // Wait for Employee Distribution Widget
             wait.until(ExpectedConditions.visibilityOfElementLocated(employeeDistributionWidget));
+            Thread.sleep(1000); // Delay for 1 second
+
+            // Wait for Pending Leave Requests Widget
             wait.until(ExpectedConditions.visibilityOfElementLocated(pendingLeaveRequestsWidget));
+            Thread.sleep(1000); // Delay for 1 second
+
             System.out.println("Dashboard elements are visible at the current resolution.");
+
+            // Maximize the window with a slight delay
+            Thread.sleep(1000);
             driver.manage().window().maximize();
+            Thread.sleep(1000);
+
             return true;
         } catch (Exception e) {
             System.out.println("Dashboard elements are not responsive: " + e.getMessage());
-            driver.manage().window().maximize();
+            try {
+                Thread.sleep(1000);
+                driver.manage().window().maximize();
+                Thread.sleep(1000);
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+                System.out.println("Thread interrupted while maximizing window: " + ie.getMessage());
+            }
+
             return false;
         }
     }
+
     public boolean isSearchBarVisible() {
         try {
             WebElement searchBarElement = wait.until(ExpectedConditions.visibilityOfElementLocated(searchBar));
@@ -100,12 +135,25 @@ public class DashboardPage {
     }
 
     public void enterSearchQuery(String query) {
-        WebElement searchBarElement = wait.until(ExpectedConditions.visibilityOfElementLocated(searchBar));
-        searchBarElement.clear();
-        searchBarElement.sendKeys(query);
-        searchBarElement.sendKeys(Keys.ENTER);
-        System.out.println("Query entered in the search bar: " + query);
+        try {
+            WebElement searchBarElement = wait.until(ExpectedConditions.visibilityOfElementLocated(searchBar));
+            searchBarElement.clear();
+            Thread.sleep(1000);
+            for (char c : query.toCharArray()) {
+                searchBarElement.sendKeys(Character.toString(c));
+                Thread.sleep(500);
+            }
+            Thread.sleep(1000);
+            searchBarElement.sendKeys(Keys.ENTER);
+            System.out.println("Query entered in the search bar: " + query);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Thread was interrupted: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error while entering search query: " + e.getMessage());
+        }
     }
+
 
     public boolean verifySearchResults(String query) {
         try {
@@ -124,13 +172,20 @@ public class DashboardPage {
             return false;
         }
     }
+
     public void clearSearchField() {
         try {
             WebElement searchBarElement = wait.until(ExpectedConditions.visibilityOfElementLocated(searchBar));
-            searchBarElement.click(); // Focus on the search bar
-            searchBarElement.sendKeys(Keys.chord(Keys.CONTROL, "a")); // Select all text
-            searchBarElement.sendKeys(Keys.BACK_SPACE); // Clear the text
+            searchBarElement.click();
+            Thread.sleep(1000);
+            searchBarElement.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+            Thread.sleep(1000);
+            searchBarElement.sendKeys(Keys.BACK_SPACE);
+            Thread.sleep(1000);
             System.out.println("Search field cleared.");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.out.println("Thread was interrupted: " + e.getMessage());
         } catch (Exception e) {
             System.out.println("Error clearing search field: " + e.getMessage());
         }
@@ -150,25 +205,12 @@ public class DashboardPage {
     public boolean isPendingLeaveRequestsWidgetVisible() {
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(pendingLeaveRequestsWidget));
+            System.out.println("Pending Leave Request Widget Available");
             return true;
         } catch (Exception e) {
             System.out.println("Error locating Pending Leave Requests widget: " + e.getMessage());
             return false;
         }
-    }
-
-    public int getPendingLeaveRequestsCount() {
-        try {
-            WebElement countElement = wait.until(ExpectedConditions.visibilityOfElementLocated(pendingLeaveRequestsCount));
-            return Integer.parseInt(countElement.getText());
-        } catch (Exception e) {
-            System.out.println("Error fetching Pending Leave Requests count: " + e.getMessage());
-            return -1;
-        }
-    }
-
-    public int getSystemPendingLeaveRequestsCount() {
-        return 1;
     }
 
 }

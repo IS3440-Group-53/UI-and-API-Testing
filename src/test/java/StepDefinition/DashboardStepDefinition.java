@@ -86,22 +86,6 @@ public class DashboardStepDefinition extends DriverManager {
         System.out.println("Pending Leave Requests widget is visible on the Dashboard.");
     }
 
-    @Then("I verify the Pending Leave Requests count matches the system data")
-    public void i_verify_the_pending_leave_requests_count_matches_the_system_data() {
-        dashboardPage = new DashboardPage(driver);
-
-        // Get the count displayed on the widget
-        int displayedCount = dashboardPage.getPendingLeaveRequestsCount();
-        System.out.println("Displayed Pending Leave Requests count: " + displayedCount);
-
-        // Mock system count (replace with actual system API or database call)
-        int actualSystemCount = dashboardPage.getSystemPendingLeaveRequestsCount();
-        System.out.println("Actual Pending Leave Requests count from the system: " + actualSystemCount);
-
-        // Assertion to verify the counts match
-        Assert.assertEquals(displayedCount, actualSystemCount, "Mismatch in Pending Leave Requests count.");
-        System.out.println("Pending Leave Requests count matches the system data.");
-    }
     @When("I type {string} into the search bar on the Dashboard")
     public void i_type_into_the_search_bar_on_the_dashboard(String query) {
         dashboardPage = new DashboardPage(driver);

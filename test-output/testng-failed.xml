@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [CucumberTestSuite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test2(failed)">
-    <classes>
-      <class name="runner.DashboardTestRunner">
-        <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="3 4"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- runner.DashboardTestRunner -->
-    </classes>
-  </test> <!-- Test2(failed) -->
   <test thread-count="5" name="Test3(failed)">
     <classes>
       <class name="runner.MyInfoTestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="tearDownClass"/>
           <include name="runScenario" invocation-numbers="0"/>
+          <include name="tearDownClass"/>
         </methods>
       </class> <!-- runner.MyInfoTestRunner -->
     </classes>
