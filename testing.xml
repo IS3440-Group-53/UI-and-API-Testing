@@ -20,4 +20,10 @@
             <class name="runner.MyInfoTestRunner" />
         </classes>
     </test>
+    <test name="Test4">
+        <classes>
+            <!-- Specify your second TestNG class here -->
+            <class name="runner.TimeTestRunner" />
+        </classes>
+    </test>
 </suite>
