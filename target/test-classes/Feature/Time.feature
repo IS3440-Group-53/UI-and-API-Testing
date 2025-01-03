@@ -12,7 +12,7 @@ Feature: Time Module Navigation and Customer Management
     When I navigate to Time tab
     And I click on Timesheets dropdown
     And I select My Timesheet option
-    And I click the previous button "3" times
+    And I click the previous button "5" times
     And I click Create Timesheet button
     And I click Submit button
 
@@ -30,7 +30,7 @@ Feature: Time Module Navigation and Customer Management
     And I select Customers option
     And I create new customer with details:
       | name | description |
-      | Safd | Employee   |
+      | Nadun | Employee   |
 
   @customer-validation
   Scenario: Verify Required Field Validation for Customer Creation
