@@ -11,28 +11,30 @@ public class TimePage {
     WebDriver driver;
     WebDriverWait wait;
 
-    // Previous locators remain the same
+    // All locators
     By timeTab = By.xpath("/html/body/div/div[1]/div[1]/aside/nav/div[2]/ul/li[4]/a");
     By timesheetsDropdown = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[1]/span");
-    By myTimesheets = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[1]/ul/li[1]");
-    By pageHeader = By.xpath("//h6[contains(text(),'Time / Timesheets')]");
+    By myTimesheets = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[1]/ul/li[1]/a");
     By editButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button[1]");
     By typeField = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[1]/div/div[2]/div/div/input");
     By saveButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button[3]");
-    By attendanceDropdown = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[2]/span");
-    By punchInOutButton = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[2]/ul/li[2]/a");
-    By noteTextField = By.xpath("//textarea[@placeholder='Type here']");
-
-    // Updated XPath for the In/Out button
-    By inOutButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div/form/div[3]/button");
+    By projectInfoDropdown = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[4]/span");
+    By customersOption = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[4]/ul/li[1]/a");
+    By addButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/div[1]/div/button");
+    By customerNameField = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/input");
+    By customerDescriptionField = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[2]/div/div[2]/textarea");
+    By customerSaveButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div/form/div[3]/button[2]");
+    By previousButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[1]/i");
+    By createTimesheetButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button");
+    By submitButton = By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button[2]");
+    By myTimesheetOption = By.xpath("/html/body/div/div[1]/div[1]/header/div[2]/nav/ul/li[1]/ul/li[1]/a");
 
     public TimePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    // Previous methods remain the same
-    public void clickTimeTab() {
+    public void clickTime() {
         try {
             Thread.sleep(2000);
             wait.until(ExpectedConditions.elementToBeClickable(timeTab)).click();
@@ -41,7 +43,7 @@ public class TimePage {
         }
     }
 
-    public void clickTimesheetsTab() {
+    public void clickTimesheets() {
         try {
             Thread.sleep(2000);
             wait.until(ExpectedConditions.elementToBeClickable(timesheetsDropdown)).click();
@@ -50,54 +52,142 @@ public class TimePage {
         }
     }
 
-    public void clickMyTimesheets() {
-        wait.until(ExpectedConditions.elementToBeClickable(myTimesheets)).click();
-    }
-
-    public void clickEdit() {
-        wait.until(ExpectedConditions.elementToBeClickable(editButton)).click();
-    }
-
-    public void enterTestInTypeField() {
-        wait.until(ExpectedConditions.elementToBeClickable(typeField)).sendKeys("Test");
-    }
-
-    public void clickSave() {
-        wait.until(ExpectedConditions.elementToBeClickable(saveButton)).click();
-    }
-
-    public void clickAttendanceDropdown() {
+    public void clickTimesheetsDropdown() {
         try {
             Thread.sleep(2000);
-            wait.until(ExpectedConditions.elementToBeClickable(attendanceDropdown)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(timesheetsDropdown)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public void clickPunchInOut() {
+    public void selectMyTimesheetOption() {
         try {
             Thread.sleep(2000);
-            wait.until(ExpectedConditions.elementToBeClickable(punchInOutButton)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(myTimesheetOption)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    public void enterNoteText() {
+    public void clickPreviousButton(int times) {
         try {
-            Thread.sleep(2000);
-            wait.until(ExpectedConditions.elementToBeClickable(noteTextField)).sendKeys("Test");
+            for (int i = 0; i < times; i++) {
+                Thread.sleep(1000);
+                wait.until(ExpectedConditions.elementToBeClickable(previousButton)).click();
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    // Updated method for clicking In/Out button
-    public void clickInOutButton() {
+    public void clickCreateTimesheet() {
         try {
             Thread.sleep(2000);
-            wait.until(ExpectedConditions.elementToBeClickable(inOutButton)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(createTimesheetButton)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickSubmit() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickMyTimesheet() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(myTimesheets)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickEditButton() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(editButton)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void enterTypeFieldData() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(typeField)).sendKeys("Test");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickSaveButton() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(saveButton)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickProjectInfo() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(projectInfoDropdown)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void selectCustomers() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(customersOption)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clickAddCustomer() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(addButton)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void enterCustomerDetails(String name, String description) {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(customerNameField)).sendKeys(name);
+            wait.until(ExpectedConditions.elementToBeClickable(customerDescriptionField)).sendKeys(description);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveCustomer() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(customerSaveButton)).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void attemptSaveWithoutName() {
+        try {
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(addButton)).click();
+            Thread.sleep(2000);
+            wait.until(ExpectedConditions.elementToBeClickable(customerDescriptionField)).sendKeys("NoName");
+            wait.until(ExpectedConditions.elementToBeClickable(customerSaveButton)).click();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
