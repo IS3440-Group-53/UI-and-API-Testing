@@ -11,9 +11,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,13 +28,22 @@ public class AdminStepDefinition extends DriverManager {
 //    LoginPage loginPage;
     AdminPage adminPage;
 
-    @When("I am on the My Info page")
-    public void i_am_on_the_my_info_page() {
-
-        String expected = "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers";
+//    @When("I am on the My Info page")
+//    public void i_am_on_the_my_info_page() {
+//
+//        String expected = "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers";
+//        String actual = DriverManager.getDriver().getCurrentUrl();
+//        Assert.assertEquals(actual, expected, "Failed to navigate to MyInfo.");
+//        System.out.println("Navigated to Home Page: " + actual);
+//
+//    }
+    @When("I am on the Time page")
+    public void i_am_on_the_time_page() {
+        String expected = "https://opensource-demo.orangehrmlive.com/web/index.php/time/addCustomer/7";
         String actual = DriverManager.getDriver().getCurrentUrl();
-        Assert.assertEquals(actual, expected, "Failed to navigate to MyInfo.");
-        System.out.println("Navigated to Home Page: " + actual);
+        System.out.println("Link"+actual);
+        Assert.assertEquals(actual, expected, "Failed to navigate to Time Page.");
+        System.out.println("Navigated to Admin Page: " + actual);
 
     }
 
@@ -47,7 +54,7 @@ public class AdminStepDefinition extends DriverManager {
         adminPage.adminButtonClick();
         System.out.println("Clicked on Admin Menu Button");
     }
-
+//Comment Added
 
     @And("I click on the {string} menuitem")
     public void iClickOnTheMenuitem(String arg0) {
@@ -66,14 +73,13 @@ public class AdminStepDefinition extends DriverManager {
 //Reset/Search
 
     @When("I search for a user with the following details")
-    public void searchUser() {
-//        AdminPage adminPage = new AdminPage(driver);
-//        List<Map<String, String>> searchDetails = dataTable.asMaps(String.class, String.class);
-//        String username = searchDetails.get(0).get("Username");
-//
-//        adminPage.searchUserByUsername(username);
-//        System.out.println("Searched user: " + username);
+    public void searchUser(DataTable dataTable) {
+        AdminPage adminPage = new AdminPage(driver);
+        List<Map<String, String>> searchDetails = dataTable.asMaps(String.class, String.class);
+        String username = searchDetails.get(0).get("Username");
 
+        adminPage.searchUserByUsername(username);
+        System.out.println("Searched user: " + username);
     }
 
     @Then("I can see the user details matching the search criteria")
@@ -101,10 +107,8 @@ public class AdminStepDefinition extends DriverManager {
 
     @Then("all the search fields should be cleared")
     public void verifySearchFieldsAreCleared() {
-        AdminPage adminPage = new AdminPage(driver);
-        adminPage.clearfeilds();
-//        String usernameFieldValue = adminPage.getSearchFieldValue();
- //       Assert.assertTrue(usernameFieldValue.isEmpty(), "Search fields were not cleared!");
+        String usernameFieldValue = adminPage.getSearchFieldValue();
+        Assert.assertTrue(usernameFieldValue.isEmpty(), "Search fields were not cleared!");
         System.out.println("Verified search fields are cleared.");
     }
 
@@ -146,14 +150,28 @@ public class AdminStepDefinition extends DriverManager {
 
 //Teswtcase3
 
+//    @When("I edit the user with the following details")
+//    public void editUser(DataTable dataTable) {
+//        List<Map<String, String>> userDetails = dataTable.asMaps(String.class, String.class);
+//        for (Map<String, String> userDetail : userDetails) {
+//            System.out.println(userDetail); // Process userDetail map
+//        }
+//    }
+
     @When("I edit the user with the following details")
     public void editUser(DataTable dataTable) {
         List<Map<String, String>> userDetails = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> userDetail : userDetails) {
-            System.out.println(userDetail); // Process userDetail map
+            String role = userDetail.get("User Role");
+            String employeeName = userDetail.get("Employee Name");
+            String status = userDetail.get("Status");
+            String username = userDetail.get("Username");
+
+            // Call the editUser method from AdminPage
+            adminPage.editUser(role, employeeName, status, username);
+            System.out.println("Edited user: " + username);
         }
     }
-
 
 
 }

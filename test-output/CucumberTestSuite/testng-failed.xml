@@ -6,10 +6,21 @@
       <class name="runner.MyInfoTestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 4"/>
         </methods>
       </class> <!-- runner.MyInfoTestRunner -->
     </classes>
   </test> <!-- Test3(failed) -->
+  <test thread-count="5" name="Test5(failed)">
+    <classes>
+      <class name="runner.AdminTestRunner">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2 3"/>
+          <include name="tearDownClass"/>
+        </methods>
+      </class> <!-- runner.AdminTestRunner -->
+    </classes>
+  </test> <!-- Test5(failed) -->
 </suite> <!-- Failed suite [CucumberTestSuite] -->

@@ -26,4 +26,10 @@
             <class name="runner.TimeTestRunner" />
         </classes>
     </test>
+    <test name="Test5">
+        <classes>
+            <!-- Specify your second TestNG class here -->
+            <class name="runner.AdminTestRunner" />
+        </classes>
+    </test>
 </suite>

@@ -1,5 +1,3 @@
-
-
 package Pages;
 
 import org.openqa.selenium.By;import org.openqa.selenium.By;
@@ -24,9 +22,8 @@ public class AdminPage {
     By employeeNameInput = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div/div[2]/div/div[2]/div/div/input");
 
     By searchUsernameInput = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input");
-    By searchButton = By.xpath("//button[@type='submit']");
-    By resetButton = By.xpath("//button[normalize-space()='Reset']");
-    By UserInput = By.xpath("//input[@class='oxd-input oxd-input--focus']");
+    By searchButton = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[2]");
+    By resetButton = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[2]/button[1]");
 
 
     public AdminPage(WebDriver driver) {
@@ -50,17 +47,13 @@ public class AdminPage {
     }
 
     public void searchUserByUsername(String username) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(searchUsernameInput));
-        driver.findElement(searchUsernameInput).sendKeys("John Deo");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(searchUsernameInput)).clear();
+        driver.findElement(searchUsernameInput).sendKeys(username);
         wait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
     }
 
     public void resetSearchFields() {
         wait.until(ExpectedConditions.elementToBeClickable(resetButton)).click();
-
-    }
-    public void clearfeilds(){
-        wait.until(ExpectedConditions.elementToBeClickable(UserInput)).clear();
     }
 
     public String getSearchFieldValue() {
@@ -81,6 +74,11 @@ public class AdminPage {
 
     public void enterEmployeeName(String employeeName) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(employeeNameInput)).sendKeys(employeeName);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.DOWN).sendKeys(Keys.ENTER).perform();
     }
@@ -121,12 +119,22 @@ public class AdminPage {
         wait.until(ExpectedConditions.elementToBeClickable(editButton)).click();
 
         // Edit fields
+//        selectUserRole(role);
+//        enterEmployeeName(employeeName);
+//        selectStatus(status);
+//
+//        // Save changes
+//        clickSaveButton();
+        wait.until(ExpectedConditions.elementToBeClickable(editButton)).click();
+
+        // Edit fields
         selectUserRole(role);
         enterEmployeeName(employeeName);
         selectStatus(status);
 
         // Save changes
         clickSaveButton();
+        System.out.println("User edited successfully.");
     }
 
 
