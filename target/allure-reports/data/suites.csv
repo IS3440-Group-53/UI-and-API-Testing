@@ -1,0 +1,57 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  As a logged in user
+  I want to manage timesheets and customer information","15876","Verify Required Field Validation for Customer Creation","","Sat Jan 04 16:22:06 IST 2025","passed","Sat Jan 04 16:22:22 IST 2025","","Time Module Navigation and Customer Management","Verify Required Field Validation for Customer Creation",""
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","3068","Search a user by username","","Sat Jan 04 16:22:56 IST 2025","failed","Sat Jan 04 16:22:59 IST 2025","","Navigate from My Info to Admin Page","Search a user by username",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","13377","Delete attachment with confirmation","","Sat Jan 04 16:20:54 IST 2025","broken","Sat Jan 04 16:21:07 IST 2025","","Navigate from Dashboard to My Info Page","Delete attachment with confirmation",""
+"  This feature talk about login functionality.","12018","verify valid username and valid password","","Sat Jan 04 16:19:23 IST 2025","passed","Sat Jan 04 16:19:35 IST 2025","","To verify valid username and valid password","verify valid username and valid password",""
+"  As a logged in user
+  I want to manage timesheets and customer information","22035","Create New Customer with Valid Details","","Sat Jan 04 16:21:44 IST 2025","passed","Sat Jan 04 16:22:06 IST 2025","","Time Module Navigation and Customer Management","Create New Customer with Valid Details",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","5459","Update Gender","","Sat Jan 04 16:20:38 IST 2025","passed","Sat Jan 04 16:20:44 IST 2025","","Navigate from Dashboard to My Info Page","Update Gender",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","11761","Verify search bar functionality on the Dashboard","","Sat Jan 04 16:20:15 IST 2025","passed","Sat Jan 04 16:20:26 IST 2025","","Validate Dashboard Page","Verify search bar functionality on the Dashboard",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","26815","Verify Dashboard responsiveness across screen sizes","","Sat Jan 04 16:19:45 IST 2025","passed","Sat Jan 04 16:20:11 IST 2025","","Validate Dashboard Page","Verify Dashboard responsiveness across screen sizes",""
+"  As a logged in user
+  I want to manage timesheets and customer information","21754","Create New Timesheet","","Sat Jan 04 16:21:07 IST 2025","passed","Sat Jan 04 16:21:29 IST 2025","","Time Module Navigation and Customer Management","Create New Timesheet",""
+"  As a logged in user
+  I want to manage timesheets and customer information","17734","Edit Customer Description","","Sat Jan 04 16:22:22 IST 2025","passed","Sat Jan 04 16:22:39 IST 2025","","Time Module Navigation and Customer Management","Edit Customer Description",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","4692","Navigate to My Info Page","","Sat Jan 04 16:20:26 IST 2025","failed","Sat Jan 04 16:20:31 IST 2025","","Navigate from Dashboard to My Info Page","Navigate to My Info Page",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3045","Verify Pending Leave Requests widget functionality","","Sat Jan 04 16:20:12 IST 2025","passed","Sat Jan 04 16:20:15 IST 2025","","Validate Dashboard Page","Verify Pending Leave Requests widget functionality",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","9970","Add an image to attachments and write a comment","","Sat Jan 04 16:20:44 IST 2025","passed","Sat Jan 04 16:20:54 IST 2025","","Navigate from Dashboard to My Info Page","Add an image to attachments and write a comment",""
+"  As a logged in user
+  I want to manage timesheets and customer information","14840","Edit Timesheet Information","","Sat Jan 04 16:21:29 IST 2025","passed","Sat Jan 04 16:21:44 IST 2025","","Time Module Navigation and Customer Management","Edit Timesheet Information",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3294","Verify user profile menu options","","Sat Jan 04 16:19:41 IST 2025","passed","Sat Jan 04 16:19:45 IST 2025","","Validate Dashboard Page","Verify user profile menu options",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3026","Verify all widgets on the Dashboard","","Sat Jan 04 16:19:38 IST 2025","passed","Sat Jan 04 16:19:41 IST 2025","","Validate Dashboard Page","Verify all widgets on the Dashboard",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","6916","Update User Full Name","","Sat Jan 04 16:20:31 IST 2025","passed","Sat Jan 04 16:20:38 IST 2025","","Navigate from Dashboard to My Info Page","Update User Full Name",""
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","4879","Navigate to Admin Page","","Sat Jan 04 16:22:39 IST 2025","passed","Sat Jan 04 16:22:44 IST 2025","","Navigate from My Info to Admin Page","Navigate to Admin Page",""
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","12009","Add a new user","","Sat Jan 04 16:22:44 IST 2025","passed","Sat Jan 04 16:22:56 IST 2025","","Navigate from My Info to Admin Page","Add a new user",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3093","Verify Dashboard Page","","Sat Jan 04 16:19:35 IST 2025","passed","Sat Jan 04 16:19:38 IST 2025","","Validate Dashboard Page","Verify Dashboard Page",""
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","3028","Edit an existing user","","Sat Jan 04 16:23:00 IST 2025","failed","Sat Jan 04 16:23:03 IST 2025","","Navigate from My Info to Admin Page","Edit an existing user",""
