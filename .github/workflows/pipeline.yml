@@ -41,12 +41,12 @@ jobs:
           sudo apt-get install -y google-chrome-stable
           google-chrome --version
 
-#      # Step 9: Install XVFB for GUI
-#      - name: Install XVFB
-#        run: |
-#          sudo apt-get install -y xvfb
-#          sudo Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-#          sleep 3  # Give xvfb some time to start
+      # Step 9: Install XVFB for GUI
+      - name: Install XVFB
+        run: |
+          sudo apt-get install -y xvfb
+          sudo Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+          sleep 3  # Give xvfb some time to start
 
       # Step 11: Set up Chrome for testing
       - name: Set up Chrome for testing
