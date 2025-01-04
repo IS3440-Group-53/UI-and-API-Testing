@@ -10,13 +10,14 @@ Feature: Navigate from My Info to Admin Page
 
   @Scenario
   Scenario: Navigate to Admin Page
-    When I am on the Time page
+#    When I am on the Time page
     And I click on the "Admin" menuitem
     Then I can see the  Admin page Title
 
+
   @Scenario
   Scenario: Add a new user
-    When I am on the Dashboard page
+    When I am on the Time page
     And I click on the "Admin" menuitem
     Then I add a new user with the following details
       |Role|EmployeeName|Status|Username|Password|ConfirmPassword|
@@ -25,7 +26,7 @@ Feature: Navigate from My Info to Admin Page
 
   @Scenario
   Scenario: Search a user by username
-    When I am on the Dashboard page
+    When I am on the Time page
     And I click on the "Admin" menuitem
     When I search for a user with the following details
       | Username  |

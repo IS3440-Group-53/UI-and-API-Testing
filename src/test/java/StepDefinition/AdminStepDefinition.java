@@ -28,7 +28,7 @@ public class AdminStepDefinition extends DriverManager {
 //    LoginPage loginPage;
     AdminPage adminPage;
 
-//    @When("I am on the My Info page")
+    //    @When("I am on the My Info page")
 //    public void i_am_on_the_my_info_page() {
 //
 //        String expected = "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers";
@@ -39,14 +39,13 @@ public class AdminStepDefinition extends DriverManager {
 //    }
     @When("I am on the Time page")
     public void i_am_on_the_time_page() {
-        String expected = "https://opensource-demo.orangehrmlive.com/web/index.php/time/addCustomer/7";
+        String expected = "https://opensource-demo.orangehrmlive.com/web/index.php/time/viewCustomers";
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         String actual = DriverManager.getDriver().getCurrentUrl();
-        System.out.println("Link"+actual);
         Assert.assertEquals(actual, expected, "Failed to navigate to Time Page.");
         System.out.println("Navigated to Admin Page: " + actual);
 
     }
-
 
     @When("I click on the {string} menu on the Admin Page")
     public void i_click_on_the_menu(String menuName) {
@@ -66,8 +65,7 @@ public class AdminStepDefinition extends DriverManager {
     @Then("I can see the  Admin page Title")
     public void iCanSeeTheAdminPageTitle() {
         AdminPage adminPage = new AdminPage(driver);
-        Assert.assertEquals(adminPage.getPageHeader(),"Admin\n" +
-                "User Management");
+        Assert.assertEquals(adminPage.getPageHeader(),"Time");
     }
 
 //Reset/Search

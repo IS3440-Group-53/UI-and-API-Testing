@@ -12,8 +12,8 @@ import java.time.Duration;
 public class AdminPage {
     WebDriver driver;
     WebDriverWait wait;
-    By admin_button = By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[1]");
-    By pageHeader = By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[1]/div[1]/span");
+    By admin_button = By.xpath("//*[@id=\"app\"]/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a");
+    By pageHeader = By.xpath("//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']");
 
     By userManagementChip = By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/div[2]/nav/ul/li[1]/span");
 //    By add_button = By.xpath("//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[1]/button");
@@ -41,6 +41,7 @@ public class AdminPage {
     public String getPageHeader(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(pageHeader));
         String headerText = driver.findElement(pageHeader).getText();
+        System.out.println("Header Text ======"+headerText);
 //        assert headerText.equals("Admin") : "Expected header to be 'Admin', but found: " + headerText;
         return headerText;
 
