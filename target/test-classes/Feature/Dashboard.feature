@@ -30,5 +30,5 @@ Feature: Validate Dashboard Page
   @SearchBarFunctionality
   Scenario: Verify search bar functionality on the Dashboard
     When I type "Admin" into the search bar on the Dashboard
-    Then I should see results relevant to "Admin"
+    And I should see results relevant to "Admin"
     Then the Dashboard is restored to its default state after clearing the search bar

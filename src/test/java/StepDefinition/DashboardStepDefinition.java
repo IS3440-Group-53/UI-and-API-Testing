@@ -2,6 +2,7 @@ package StepDefinition;
 
 import Pages.DashboardPage;
 import Utilities.DriverManager;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
@@ -95,7 +96,7 @@ public class DashboardStepDefinition extends DriverManager {
         System.out.println("Typed query into the search bar: " + query);
     }
 
-    @Then("I should see results relevant to {string}")
+    @And("I should see results relevant to {string}")
     public void i_should_see_results_relevant_to(String query) {
         dashboardPage = new DashboardPage(driver);
         boolean areResultsRelevant = dashboardPage.verifySearchResults(query);
