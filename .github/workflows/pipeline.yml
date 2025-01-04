@@ -1,0 +1,86 @@
+name: Allure Report Pipeline
+on:
+  push:
+    branches:
+      - final
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    env:
+      DISPLAY: :99
+      CHROME_BIN: /usr/bin/google-chrome
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up JDK
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '19'
+
+      # Step 3: Cache Maven dependencies
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # Step 7: Install Latest Google Chrome
+      - name: Install Latest Google Chrome
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          google-chrome --version
+
+#      # Step 9: Install XVFB for GUI
+#      - name: Install XVFB
+#        run: |
+#          sudo apt-get install -y xvfb
+#          sudo Xvfb :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
+#          sleep 3  # Give xvfb some time to start
+
+      # Step 11: Set up Chrome for testing
+      - name: Set up Chrome for testing
+        run: |
+          sudo chown root:root /opt/google/chrome/chrome-sandbox
+          sudo chmod 4755 /opt/google/chrome/chrome-sandbox
+
+      # Step 12: Install Maven dependencies
+      - name: Install Maven dependencies
+        run: mvn install -DskipTests
+
+
+      # Step 14: Run tests in headless mode and generate Allure results
+      - name: Run tests and generate Allure results
+        run: |
+          mvn test -Dsurefire.suiteXmlFiles=testng.xml \
+            -Dallure.results.directory=target/allure-results \
+            -Dchrome.options="--headless=new --disable-gpu --no-sandbox --disable-dev-shm-usage --window-size=1920,1080 --remote-allow-origins=* --disable-extensions --disable-software-rasterizer"
+        continue-on-error: true
+
+
+      # Step 16: Generate Combined Allure Report
+      - name: Generate Combined Allure Report
+        run: |
+          npm install -g allure-commandline --force
+          allure generate target/allure-results --clean -o target/allure-report
+
+      # Step 9: Deploy Combined Allure Report to GitHub Pages
+      - name: Deploy Combined Allure Report to GitHub Pages
+        if: success() && github.ref == 'refs/heads/final'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: target/allure-report
+          target-folder: report
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
