@@ -81,6 +81,6 @@ jobs:
         with:
           branch: gh-pages
           folder: target/allure-report
-          target-folder: report
+          target-folder:
           clean: true
           token: ${{ secrets.GITHUB_TOKEN }}
