@@ -1,0 +1,57 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","3031","Edit an existing user","","Sat Jan 04 11:30:02 UTC 2025","failed","Sat Jan 04 11:30:05 UTC 2025","","Navigate from My Info to Admin Page","Edit an existing user",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","26631","Verify Dashboard responsiveness across screen sizes","","Sat Jan 04 11:26:57 UTC 2025","passed","Sat Jan 04 11:27:24 UTC 2025","","Validate Dashboard Page","Verify Dashboard responsiveness across screen sizes",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","5344","Update Gender","","Sat Jan 04 11:27:51 UTC 2025","passed","Sat Jan 04 11:27:56 UTC 2025","","Navigate from Dashboard to My Info Page","Update Gender",""
+"  This feature talk about login functionality.","6465","verify valid username and valid password","","Sat Jan 04 12:04:23 UTC 2025","passed","Sat Jan 04 12:04:29 UTC 2025","","To verify valid username and valid password","verify valid username and valid password",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","11794","Verify search bar functionality on the Dashboard","","Sat Jan 04 11:27:27 UTC 2025","passed","Sat Jan 04 11:27:39 UTC 2025","","Validate Dashboard Page","Verify search bar functionality on the Dashboard",""
+"  As a logged in user
+  I want to manage timesheets and customer information","14683","Create New Customer with Valid Details","","Sat Jan 04 11:28:59 UTC 2025","passed","Sat Jan 04 11:29:14 UTC 2025","","Time Module Navigation and Customer Management","Create New Customer with Valid Details",""
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","4700","Navigate to Admin Page","","Sat Jan 04 11:29:43 UTC 2025","passed","Sat Jan 04 11:29:48 UTC 2025","","Navigate from My Info to Admin Page","Navigate to Admin Page",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","13316","Delete attachment with confirmation","","Sat Jan 04 11:28:06 UTC 2025","broken","Sat Jan 04 11:28:19 UTC 2025","","Navigate from Dashboard to My Info Page","Delete attachment with confirmation",""
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","3075","Search a user by username","","Sat Jan 04 11:29:59 UTC 2025","failed","Sat Jan 04 11:30:02 UTC 2025","","Navigate from My Info to Admin Page","Search a user by username",""
+"  As a logged-in user
+  I want to navigate to the Admin page
+  So that I can manage administrative tasks","11653","Add a new user","","Sat Jan 04 11:29:48 UTC 2025","passed","Sat Jan 04 11:29:59 UTC 2025","","Navigate from My Info to Admin Page","Add a new user",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3307","Verify user profile menu options","","Sat Jan 04 11:26:54 UTC 2025","passed","Sat Jan 04 11:26:57 UTC 2025","","Validate Dashboard Page","Verify user profile menu options",""
+"  As a logged in user
+  I want to manage timesheets and customer information","14860","Edit Customer Description","","Sat Jan 04 11:29:28 UTC 2025","passed","Sat Jan 04 11:29:43 UTC 2025","","Time Module Navigation and Customer Management","Edit Customer Description",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","9976","Add an image to attachments and write a comment","","Sat Jan 04 11:27:56 UTC 2025","passed","Sat Jan 04 11:28:06 UTC 2025","","Navigate from Dashboard to My Info Page","Add an image to attachments and write a comment",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","4587","Navigate to My Info Page","","Sat Jan 04 11:27:39 UTC 2025","failed","Sat Jan 04 11:27:43 UTC 2025","","Navigate from Dashboard to My Info Page","Navigate to My Info Page",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3122","Verify Pending Leave Requests widget functionality","","Sat Jan 04 11:27:24 UTC 2025","passed","Sat Jan 04 11:27:27 UTC 2025","","Validate Dashboard Page","Verify Pending Leave Requests widget functionality",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3028","Verify all widgets on the Dashboard","","Sat Jan 04 11:26:51 UTC 2025","passed","Sat Jan 04 11:26:54 UTC 2025","","Validate Dashboard Page","Verify all widgets on the Dashboard",""
+"  As a logged in user
+  I want to manage timesheets and customer information","17443","Edit Timesheet Information","","Sat Jan 04 11:28:42 UTC 2025","passed","Sat Jan 04 11:28:59 UTC 2025","","Time Module Navigation and Customer Management","Edit Timesheet Information",""
+"  As a logged in user
+  I want to manage timesheets and customer information","22473","Create New Timesheet","","Sat Jan 04 11:28:19 UTC 2025","passed","Sat Jan 04 11:28:42 UTC 2025","","Time Module Navigation and Customer Management","Create New Timesheet",""
+"  As a logged-in user
+  I want to navigate to the My Info page
+  So that I can view and update my personal information","7036","Update User Full Name","","Sat Jan 04 11:27:43 UTC 2025","passed","Sat Jan 04 11:27:51 UTC 2025","","Navigate from Dashboard to My Info Page","Update User Full Name",""
+"  As a logged in user
+  I want to manage timesheets and customer information","14068","Verify Required Field Validation for Customer Creation","","Sat Jan 04 11:29:14 UTC 2025","passed","Sat Jan 04 11:29:28 UTC 2025","","Time Module Navigation and Customer Management","Verify Required Field Validation for Customer Creation",""
+"  As a logged-in user
+  I want to access the Dashboard page
+  So that I can view the overview of the application","3097","Verify Dashboard Page","","Sat Jan 04 11:26:48 UTC 2025","passed","Sat Jan 04 11:26:51 UTC 2025","","Validate Dashboard Page","Verify Dashboard Page",""
