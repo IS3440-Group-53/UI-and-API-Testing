@@ -6,8 +6,8 @@
       <class name="runner.MyInfoTestRunner">
         <methods>
           <include name="setUpClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="0 4"/>
         </methods>
       </class> <!-- runner.MyInfoTestRunner -->
     </classes>
@@ -17,8 +17,8 @@
       <class name="runner.AdminTestRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0 1 2 3"/>
           <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- runner.AdminTestRunner -->
     </classes>

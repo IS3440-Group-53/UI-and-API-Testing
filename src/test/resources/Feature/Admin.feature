@@ -11,7 +11,7 @@ Feature: Navigate from My Info to Admin Page
   @Scenario
   Scenario: Navigate to Admin Page
     When I am on the Time page
-    And I click on the "Admin" menuitem
+    And I click on the "Admin" menu on the Admin Page
     Then I can see the  Admin page Title
 
   @Scenario
